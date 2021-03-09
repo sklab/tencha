@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>てんちゃ</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" integrity="sha512-mSYUmp1HYZDFaVKK//63EcZq4iFWFjxSL+Z3T/aCt4IO9Cejm03q3NKKYN6pFQzY0SBOr8h+eCIAZHPXcpZaNw==" crossorigin="anonymous" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H34TY3ZL2D"></script>
+    <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-H34TY3ZL2D');</script>
+    
     <style>
         .title-bar {
             background-color: #333333;
@@ -69,7 +73,7 @@
         </div>
         <div class="row">
             <div id="tableArea" class="col">
-            予約状況を確認する日を選択してください。
+            確認したい日を選択してください。
             </div>
         </div>
         <div class="row fixed-bottom">
@@ -86,7 +90,6 @@
     <!-- bootstrap-datepicker -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js" integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ==" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/locales/bootstrap-datepicker.ja.min.js" integrity="sha512-zI0UB5DgB1Bvvrob7MyykjmbEI4e6Qkf5Aq+VJow4nwRZrL2hYKGqRf6zgH3oBQUpxPLcF2IH5PlKrW6O3y3Qw==" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" integrity="sha512-mSYUmp1HYZDFaVKK//63EcZq4iFWFjxSL+Z3T/aCt4IO9Cejm03q3NKKYN6pFQzY0SBOr8h+eCIAZHPXcpZaNw==" crossorigin="anonymous" />
     <!-- Day.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.9.4/dayjs.min.js" integrity="sha512-XZSHSEFj4QeE0G4pwy4tToyAhF2VXoEcF9CP0t1PSZMP2XHhEEB9PjM9knsdzcEKbi6GRMazdt8tJadz0JTKIQ==" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.9.4/locale/ja.min.js" integrity="sha512-SiUClNZ+4V0LNhEejAXtMc4PVMKb7HbzkNP9z2sIjJblwnojFZp1bPkhzAmu4Jbj/2Ohqxu5NhXqkNI1wMKuyw==" crossorigin="anonymous"></script>
@@ -129,7 +132,7 @@
 
             $('#targetDate').on('change', function() {
                 document.querySelector('#tableArea').innerHTML = '読み込み中...'
-                    + "<br>5秒経っても表示されない時は、<br>別の日を選択してください。";
+                    + "<br>5秒経過しても表示されない時は、<br>別の日を選択してください。";
                 const script = document.createElement("script");
                 const dt = $('#targetDate').val().replace(/\//g, '');
                 script.src = dirPath + '/contents/' + dt.substr(0, 4) + '/' + dt + '.js?' + Math.random();
